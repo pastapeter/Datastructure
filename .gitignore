@@ -1,0 +1,115 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@pastapeter 
+gcc-mirror
+/
+gcc
+Mirror
+mirrored from git://gcc.gnu.org/git/gcc.git
+318
+4.6k
+2.5k
+Code
+Pull requests
+25
+Actions
+Projects
+Wiki
+Security
+Insights
+gcc/.gitignore
+@simark
+simark Sync .gitignore with binutils-gdb
+…
+Latest commit cf44255 on 3 Dec 2020
+ History
+ 3 contributors
+@marxin@simark@jicama
+68 lines (54 sloc)  566 Bytes
+  
+*.diff
+*.patch
+*.orig
+*.rej
+
+*~
+.#*
+*#
+
+*.flt
+*.gmo
+*.info
+*.la
+*.lo
+*.o
+*.pyc
+*.tmp
+*.a
+
+.deps
+.libs
+
+autom4te.cache
+config.cache
+config.h
+config.intl
+config.log
+config.status
+libtool
+POTFILES
+*-POTFILES
+
+TAGS
+TAGS.sub
+
+.local.vimrc
+.lvimrc
+
+.clang-format
+.clang-tidy
+.clangd
+.cache
+compile_commands.json
+
+.gdbinit
+.gdb_history
+
+perf.data
+perf.data.old
+
+# ignore core files, but not java/net/protocol/core/
+core
+!core/
+
+lost+found
+
+# ignore ./contrib/gcc_update output
+LAST_UPDATED
+REVISION
+
+stamp-*
+*.stamp
+
+# ignore in-tree prerequisites
+/mpfr*
+/mpc*
+/gmp*
+/isl*
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
