@@ -1,26 +1,18 @@
+//
+//  ArrayList.c
+//  Point
+//
+//  Created by abc on 2021/01/16.
+//
+
+#include "ArrayList.h"
 #include <stdio.h>
-#ifndef __ARRAY_LIST_H__
-#define __ARRAY_LIST_H__
-
-#define TRUE 1
-#define FALSE 0
-
-#define LIST_LEN 100
-typedef int LData;
-
-typedef struct __ArrayList{
-    LData arr[LIST_LEN];
-    int numOfData;
-    int curPosition;
-}ArrayList;
-
-typedef ArrayList List;
-
 
 void ListInit(List* plist){ // 초기화
     (plist->numOfData) = 0; // 현재 리스트에 저장된 데이터 수는 0
     (plist->curPosition) = -1; // 현재 아무 위치도 가르키지 않음
 }
+
 void LInsert(List* plist, LData data){
 /*
 리스트에 데이터를 저장한다. 매개변수 data에 전달된 값을 저장한다.
@@ -32,7 +24,6 @@ void LInsert(List* plist, LData data){
     plist->arr[plist->numOfData] = data;
     (plist->numOfData)++;
 }
-
 
 int LFirst(List* plist, LData *pdata){
 /*
@@ -51,7 +42,7 @@ int LFirst(List* plist, LData *pdata){
 int LNext(List *plist, LData *pdata){
 /*
 - 참조된 데이터의 다음 데이터가 pdata가 가리키는 메모리에 저장된다.
-- 순파적인 참조를 위해서 반복 호출이 가능하다. 
+- 순파적인 참조를 위해서 반복 호출이 가능하다.
 - 참조를 새로 시작하려면 먼저 LFirst 함수를 호출해야한다.
 - 참조 성공시 TRUE(1), 실패시 FALSE(0) 반환
 */
@@ -88,50 +79,4 @@ int LCount(List* plist){
  - 리스트에 저장되어 있는 데이터의 수를 반환한다.
 */
     return plist->numOfData;
-}
-
-
-int main(){
-    //ArrayList의 생성 및 초기화
-    List list;
-    int data;
-    ListInit(&list);
-    int total =0;
-    int i;
-
-    //5개의 데이터 저장
-    for(i=1;i<10;i++){
-        LInsert(&list, i);
-    }
-    
-    //저장된데이터의 전체 출력
-    printf("현재 데이터의 수: %d \n", LCount(&list));
-
-    if(LFirst(&list, &data)){ // 첫번째 데이터 조회
-        printf("%d ", data);
-        //total = total + data;
-        while(LNext(&list, &data))
-            printf("%d ", data);
-          //  total = total + data;
-    }
-    //printf("total = %d", total);
-    printf("\n\n");
-    if(LFirst(&list, &data)){
-        if(data%2==0 || data%3==0)
-            LRemove(&list);
-        while(LNext(&list, &data)){
-            if(data%2==0 || data%3==0)
-                LRemove(&list);
-        }
-    }
-
-    //삭제 후 남은 데이터 재출력
-     printf("현재 데이터의 수: %d \n", LCount(&list));
-
-    if(LFirst(&list, &data)){ // 첫번째 데이터 조회
-        printf("%d ", data);
-
-        while(LNext(&list, &data))
-            printf("%d ", data);
-    }
 }
