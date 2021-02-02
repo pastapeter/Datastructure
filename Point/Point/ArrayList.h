@@ -15,16 +15,23 @@
 #define LIST_LEN 100
 typedef Point* LData;
 
-typedef struct __ArrayList{
-    LData arr[LIST_LEN];
-    int numOfData;
-    int curPosition;
-}ArrayList;
+typedef struct _node{
+    LData data;
+    struct _node* next;
+}Node;
 
-typedef ArrayList List;
+typedef struct __ArrayList{
+    Node* head;
+    Node* before;
+    Node* cur;
+    int numOfdata;
+} LinkedList;
+
+typedef LinkedList List;
 
 void ListInit(List* plist);
 void LInsert(List* plist, LData data);
+void FInsert(List* plist, LData data);
 int LFirst(List* plist, LData *pdata);
 int LNext(List *plist, LData *pdata);
 LData LRemove(List *plist);
