@@ -8,11 +8,12 @@
 #ifndef CLinkedList_h
 #define CLinkedList_h
 #include <stdio.h>
+#include "employeeIdentifier.h"
 
 #define TRUE 1
 #define FALSE 0
 
-typedef int Data;
+typedef Identifier* Data;
 
 typedef struct _node{
     Data data;
