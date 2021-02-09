@@ -15,8 +15,18 @@ void ListInit(List* plist){ // 초기화
     plist->numOfdata = 0;
 }
 
-void LInsert(List* plist, LData data){
-    FInsert(plist, data);
+void SInsert(List* plist, LData data){
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    Node* pred = plist->head;
+    newNode->data = data;
+    
+    while(pred->next != NULL && plist->comp(data, pred->next->data) != 0){
+        pred = pred->next;
+    }
+    newNode->next = pred->next;
+    pred->next = newNode;
+    
+    (plist->numOfdata)++;
 }
 
 void FInsert(List* plist, LData data){
@@ -25,6 +35,17 @@ void FInsert(List* plist, LData data){
     newNode->next = plist->head->next;
     plist->head->next = newNode;
     (plist->numOfdata)++;
+}
+
+
+void LInsert(List* plist, LData data){
+    if(plist->comp == NULL){
+        FInsert(plist, data);
+    }
+    else {
+        SInsert(plist, data);
+    }
+    
 }
 
 int LFirst(List* plist, LData *pdata){
@@ -76,4 +97,8 @@ int LCount(List* plist){
  - 리스트에 저장되어 있는 데이터의 수를 반환한다.
 */
     return plist->numOfdata;
+}
+
+void SetSortRule(List* plist, int(*comp)(LData d1, LData d2)){
+    plist->comp = comp;
 }

@@ -10,12 +10,28 @@
 #include "Point.h"
 #include "ArrayList.h"
 
+int whoIsPrecede(LData d1, LData d2){
+    if(d1->xpos < d2->xpos){
+        return 0;
+    }
+    else if(d1->xpos == d2->xpos){
+        if(d1->ypos < d2->ypos){
+            return 0;
+        }
+        else return 1;
+    }
+    else {
+        return 1;
+    }
+}
+
 int main(int argc, const char * argv[]) {
     List list;
     Point compPos;
     Point* ppos;
     
     ListInit(&list);
+    SetSortRule(&list, whoIsPrecede);
     
     //4개 데이터 저장
     ppos = (Point*)malloc(sizeof(Point));
