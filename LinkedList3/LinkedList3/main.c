@@ -8,6 +8,13 @@
 #include <stdio.h>
 #include "DLinkedList.h"
 
+int WhoIsPrecede(int d1, int d2){
+    if(d1 < d2){
+        return 0;
+    } else {
+        return 1;
+    }
+}
 
 int main(int argc, const char * argv[]) {
     
@@ -15,6 +22,9 @@ int main(int argc, const char * argv[]) {
     List list;
     int data;
     ListInit(&list);
+    
+    //정렬의 기준 등록하기
+    SetSortRule(&list, WhoIsPrecede);
     
     // 5개의 데이터 저장
     LInsert(&list, 11);

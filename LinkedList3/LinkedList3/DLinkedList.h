@@ -15,7 +15,7 @@ typedef int LData;
 
 typedef struct node{
     LData data;
-    struct _node* next;
+    struct node* next;
 } Node;
 
 typedef struct _linkedlist{
