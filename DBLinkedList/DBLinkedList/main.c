@@ -43,5 +43,29 @@ int main(int argc, const char * argv[]) {
     }
     
     
+    if(LFirst(&list, &data)){
+        if(data%2==0){
+            LRemove(&list);
+        }
+        //오른쪽 노드로 이동하며 데이터 조회
+        while(LNext(&list, &data)){
+            if(data%2==0){
+                LRemove(&list);
+            }
+        }
+        printf("\n\n");
+    }
+    
+    if(LFirst(&list, &data)){
+        printf("%d ", data);
+        
+        //오른쪽 노드로 이동하며 데이터 조회
+        while(LNext(&list, &data)){
+            printf("%d ", data);
+        }
+        printf("\n\n");
+    }
+  
+    
     return 0;
 }
