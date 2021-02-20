@@ -31,16 +31,16 @@ void DQAddFirst(Deque* pdeq, Data data){
     } else {
         pdeq->head->prev = newNode;
     }
-    pdeq->head = newNode;
     newNode->prev = NULL;
+    pdeq->head = newNode;
 }
 void DQAddLast(Deque* pdeq, Data data){
     Node* newNode = (Node*)malloc(sizeof(Node));
     newNode->data = data;
     newNode->prev = pdeq->tail;
-    if(pdeq->tail == NULL){
+    
+    if(DQIsEmpty(pdeq)){
         pdeq->head = newNode;
-        
     } else {
         pdeq->tail->next = newNode;
     }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		28E8150925E0F9E7007ACFFA /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E8150825E0F9E7007ACFFA /* main.c */; };
 		28E8151225E0F9FC007ACFFA /* Deque.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E8151125E0F9FC007ACFFA /* Deque.c */; };
+		28E8151625E10BD8007ACFFA /* DequeBaseQueue.c in Sources */ = {isa = PBXBuildFile; fileRef = 28E8151525E10BD8007ACFFA /* DequeBaseQueue.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		28E8150825E0F9E7007ACFFA /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		28E8151025E0F9FC007ACFFA /* Deque.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Deque.h; sourceTree = "<group>"; };
 		28E8151125E0F9FC007ACFFA /* Deque.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Deque.c; sourceTree = "<group>"; };
+		28E8151425E10BD8007ACFFA /* DequeBaseQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DequeBaseQueue.h; sourceTree = "<group>"; };
+		28E8151525E10BD8007ACFFA /* DequeBaseQueue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = DequeBaseQueue.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				28E8150825E0F9E7007ACFFA /* main.c */,
+				28E8151425E10BD8007ACFFA /* DequeBaseQueue.h */,
+				28E8151525E10BD8007ACFFA /* DequeBaseQueue.c */,
 				28E8151025E0F9FC007ACFFA /* Deque.h */,
 				28E8151125E0F9FC007ACFFA /* Deque.c */,
 			);
@@ -125,6 +130,7 @@
 			files = (
 				28E8151225E0F9FC007ACFFA /* Deque.c in Sources */,
 				28E8150925E0F9E7007ACFFA /* main.c in Sources */,
+				28E8151625E10BD8007ACFFA /* DequeBaseQueue.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
