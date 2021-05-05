@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28CC20E525C830C5005C19E9 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 28CC20E425C830C5005C19E9 /* main.c */; };
-		28CC20EE25C830D9005C19E9 /* DLinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 28CC20ED25C830D9005C19E9 /* DLinkedList.c */; };
+		281A9D10263577D600A16831 /* heapSort.c in Sources */ = {isa = PBXBuildFile; fileRef = 28743C5E262C51B4009EA490 /* heapSort.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		28CC20DF25C830C5005C19E9 /* CopyFiles */ = {
+		28743C30262BE84F009EA490 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,14 +23,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		28CC20E125C830C5005C19E9 /* LinkedList3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinkedList3; sourceTree = BUILT_PRODUCTS_DIR; };
-		28CC20E425C830C5005C19E9 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		28CC20EC25C830D9005C19E9 /* DLinkedList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLinkedList.h; sourceTree = "<group>"; };
-		28CC20ED25C830D9005C19E9 /* DLinkedList.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = DLinkedList.c; sourceTree = "<group>"; };
+		28743C32262BE84F009EA490 /* Sort */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sort; sourceTree = BUILT_PRODUCTS_DIR; };
+		28743C35262BE84F009EA490 /* insertionSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = insertionSort.c; sourceTree = "<group>"; };
+		28743C3E262BF410009EA490 /* bubbleSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bubbleSort.c; sourceTree = "<group>"; };
+		28743C42262BF750009EA490 /* bubblesortFlag.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bubblesortFlag.c; sourceTree = "<group>"; };
+		28743C46262BFBCC009EA490 /* SelectionSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SelectionSort.c; sourceTree = "<group>"; };
+		28743C4B262C0136009EA490 /* shellSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = shellSort.c; sourceTree = "<group>"; };
+		28743C4E262C16CF009EA490 /* MergeSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = MergeSort.c; sourceTree = "<group>"; };
+		28743C52262C247B009EA490 /* QuickSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = QuickSort.c; sourceTree = "<group>"; };
+		28743C56262C3159009EA490 /* QuicksortStack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = QuicksortStack.c; sourceTree = "<group>"; };
+		28743C59262C3166009EA490 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		28743C5A262C3166009EA490 /* Stack.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Stack.c; sourceTree = "<group>"; };
+		28743C5E262C51B4009EA490 /* heapSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = heapSort.c; sourceTree = "<group>"; };
+		28743C62262C6FD2009EA490 /* RadixSort.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = RadixSort.c; sourceTree = "<group>"; };
+		28743C65262C6FD7009EA490 /* queue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
+		28743C66262C6FD7009EA490 /* queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = queue.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		28CC20DE25C830C5005C19E9 /* Frameworks */ = {
+		28743C2F262BE84F009EA490 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,66 +51,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		28CC20D825C830C5005C19E9 = {
+		28743C29262BE84F009EA490 = {
 			isa = PBXGroup;
 			children = (
-				28CC20E325C830C5005C19E9 /* LinkedList3 */,
-				28CC20E225C830C5005C19E9 /* Products */,
+				28743C34262BE84F009EA490 /* Sort */,
+				28743C33262BE84F009EA490 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		28CC20E225C830C5005C19E9 /* Products */ = {
+		28743C33262BE84F009EA490 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				28CC20E125C830C5005C19E9 /* LinkedList3 */,
+				28743C32262BE84F009EA490 /* Sort */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		28CC20E325C830C5005C19E9 /* LinkedList3 */ = {
+		28743C34262BE84F009EA490 /* Sort */ = {
 			isa = PBXGroup;
 			children = (
-				28CC20E425C830C5005C19E9 /* main.c */,
-				28CC20EC25C830D9005C19E9 /* DLinkedList.h */,
-				28CC20ED25C830D9005C19E9 /* DLinkedList.c */,
+				28743C35262BE84F009EA490 /* insertionSort.c */,
+				28743C3E262BF410009EA490 /* bubbleSort.c */,
+				28743C42262BF750009EA490 /* bubblesortFlag.c */,
+				28743C46262BFBCC009EA490 /* SelectionSort.c */,
+				28743C4B262C0136009EA490 /* shellSort.c */,
+				28743C4E262C16CF009EA490 /* MergeSort.c */,
+				28743C52262C247B009EA490 /* QuickSort.c */,
+				28743C56262C3159009EA490 /* QuicksortStack.c */,
+				28743C59262C3166009EA490 /* Stack.h */,
+				28743C5E262C51B4009EA490 /* heapSort.c */,
+				28743C5A262C3166009EA490 /* Stack.c */,
+				28743C62262C6FD2009EA490 /* RadixSort.c */,
+				28743C65262C6FD7009EA490 /* queue.h */,
+				28743C66262C6FD7009EA490 /* queue.c */,
 			);
-			path = LinkedList3;
+			path = Sort;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		28CC20E025C830C5005C19E9 /* LinkedList3 */ = {
+		28743C31262BE84F009EA490 /* Sort */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 28CC20E825C830C5005C19E9 /* Build configuration list for PBXNativeTarget "LinkedList3" */;
+			buildConfigurationList = 28743C39262BE84F009EA490 /* Build configuration list for PBXNativeTarget "Sort" */;
 			buildPhases = (
-				28CC20DD25C830C5005C19E9 /* Sources */,
-				28CC20DE25C830C5005C19E9 /* Frameworks */,
-				28CC20DF25C830C5005C19E9 /* CopyFiles */,
+				28743C2E262BE84F009EA490 /* Sources */,
+				28743C2F262BE84F009EA490 /* Frameworks */,
+				28743C30262BE84F009EA490 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LinkedList3;
-			productName = LinkedList3;
-			productReference = 28CC20E125C830C5005C19E9 /* LinkedList3 */;
+			name = Sort;
+			productName = Sort;
+			productReference = 28743C32262BE84F009EA490 /* Sort */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		28CC20D925C830C5005C19E9 /* Project object */ = {
+		28743C2A262BE84F009EA490 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					28CC20E025C830C5005C19E9 = {
+					28743C31262BE84F009EA490 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = 28CC20DC25C830C5005C19E9 /* Build configuration list for PBXProject "LinkedList3" */;
+			buildConfigurationList = 28743C2D262BE84F009EA490 /* Build configuration list for PBXProject "Sort" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -108,30 +129,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 28CC20D825C830C5005C19E9;
-			productRefGroup = 28CC20E225C830C5005C19E9 /* Products */;
+			mainGroup = 28743C29262BE84F009EA490;
+			productRefGroup = 28743C33262BE84F009EA490 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				28CC20E025C830C5005C19E9 /* LinkedList3 */,
+				28743C31262BE84F009EA490 /* Sort */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		28CC20DD25C830C5005C19E9 /* Sources */ = {
+		28743C2E262BE84F009EA490 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28CC20E525C830C5005C19E9 /* main.c in Sources */,
-				28CC20EE25C830D9005C19E9 /* DLinkedList.c in Sources */,
+				281A9D10263577D600A16831 /* heapSort.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		28CC20E625C830C5005C19E9 /* Debug */ = {
+		28743C37262BE84F009EA490 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -182,7 +202,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -190,7 +210,7 @@
 			};
 			name = Debug;
 		};
-		28CC20E725C830C5005C19E9 /* Release */ = {
+		28743C38262BE84F009EA490 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,17 +255,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		28CC20E925C830C5005C19E9 /* Debug */ = {
+		28743C3A262BE84F009EA490 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 693WY75AQY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -253,10 +272,9 @@
 			};
 			name = Debug;
 		};
-		28CC20EA25C830C5005C19E9 /* Release */ = {
+		28743C3B262BE84F009EA490 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 693WY75AQY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -267,25 +285,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		28CC20DC25C830C5005C19E9 /* Build configuration list for PBXProject "LinkedList3" */ = {
+		28743C2D262BE84F009EA490 /* Build configuration list for PBXProject "Sort" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				28CC20E625C830C5005C19E9 /* Debug */,
-				28CC20E725C830C5005C19E9 /* Release */,
+				28743C37262BE84F009EA490 /* Debug */,
+				28743C38262BE84F009EA490 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		28CC20E825C830C5005C19E9 /* Build configuration list for PBXNativeTarget "LinkedList3" */ = {
+		28743C39262BE84F009EA490 /* Build configuration list for PBXNativeTarget "Sort" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				28CC20E925C830C5005C19E9 /* Debug */,
-				28CC20EA25C830C5005C19E9 /* Release */,
+				28743C3A262BE84F009EA490 /* Debug */,
+				28743C3B262BE84F009EA490 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 28CC20D925C830C5005C19E9 /* Project object */;
+	rootObject = 28743C2A262BE84F009EA490 /* Project object */;
 }
