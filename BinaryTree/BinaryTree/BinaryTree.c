@@ -40,23 +40,23 @@ void makeRightSubTree(BtreeNode* main, BtreeNode* sub){
     main->right = sub;
 }
 
-void InorderTraverse(BtreeNode* bt){
+void InorderTraverse(BtreeNode* bt, VisitFuncPtr action){
     if(bt == NULL) return;
-    InorderTraverse(bt->left);
-    printf("%d \n", bt->data);
-    InorderTraverse(bt->right);
+    InorderTraverse(bt->left, action);
+    action(bt->data);
+    InorderTraverse(bt->right, action);
 }
 
-void PreorderTraverse(BtreeNode* bt){
+void PreorderTraverse(BtreeNode* bt, VisitFuncPtr action){
     if(bt == NULL) return;
-    printf("%d \n", bt->data);
-    PreorderTraverse(bt->left);
-    PreorderTraverse(bt->right);
+    action(bt->data);
+    PreorderTraverse(bt->left, action);
+    PreorderTraverse(bt->right, action);
 }
-void PostorderTraverse(BtreeNode* bt){
+void PostorderTraverse(BtreeNode* bt, VisitFuncPtr action){
     if(bt == NULL) return;
-    PostorderTraverse(bt->left);
-    PostorderTraverse(bt->right);
-    printf("%d \n", bt->data);
+    PostorderTraverse(bt->left, action);
+    PostorderTraverse(bt->right, action);
+    action(bt->data);
 
 }

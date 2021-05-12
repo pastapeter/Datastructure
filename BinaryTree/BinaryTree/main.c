@@ -7,6 +7,10 @@
 
 #include "BinaryTree.h"
 
+void showIntData(int data){
+    printf("%d ", data);
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     BtreeNode* bt1 = makeBtreeNode();
@@ -23,8 +27,8 @@ int main(int argc, const char * argv[]) {
     makeRightSubTree(bt1, bt3);
     makeLeftSubTree(bt2, bt4);
     
-    InorderTraverse(bt1);
-    PostorderTraverse(bt1);
-    PreorderTraverse(bt1);
+    InorderTraverse(bt1, showIntData);
+    PostorderTraverse(bt1, showIntData);
+    PreorderTraverse(bt1, showIntData);
     return 0;
 }
