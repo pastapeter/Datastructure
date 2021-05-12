@@ -28,5 +28,8 @@ BtreeNode* getRightSubTree(BtreeNode* bt);
 
 void makeLeftSubTree(BtreeNode* main, BtreeNode* sub);
 void makeRightSubTree(BtreeNode* main, BtreeNode* sub);
+void InorderTraverse(BtreeNode* bt);
+void PreorderTraverse(BtreeNode* bt);
+void PostorderTraverse(BtreeNode* bt);
 
 #endif /* BinaryTree_h */

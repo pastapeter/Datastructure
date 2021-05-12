@@ -23,7 +23,8 @@ int main(int argc, const char * argv[]) {
     makeRightSubTree(bt1, bt3);
     makeLeftSubTree(bt2, bt4);
     
-    printf("%d \n", getData(getLeftSubTree(bt1)));
-    printf("%d \n", getData(getLeftSubTree(getLeftSubTree(bt1))));
+    InorderTraverse(bt1);
+    PostorderTraverse(bt1);
+    PreorderTraverse(bt1);
     return 0;
 }
