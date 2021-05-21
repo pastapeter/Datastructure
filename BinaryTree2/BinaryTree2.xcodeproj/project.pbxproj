@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		288D56012657F63A004FCEF3 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 288D56002657F63A004FCEF3 /* main.c */; };
+		288D56092657F6FA004FCEF3 /* Binarytree.c in Sources */ = {isa = PBXBuildFile; fileRef = 288D56082657F6FA004FCEF3 /* Binarytree.c */; };
+		288D560C2657FB8B004FCEF3 /* Stack.c in Sources */ = {isa = PBXBuildFile; fileRef = 288D560A2657FB8B004FCEF3 /* Stack.c */; };
+		288D560F2657FB96004FCEF3 /* Queue.c in Sources */ = {isa = PBXBuildFile; fileRef = 288D560E2657FB96004FCEF3 /* Queue.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		288D55FD2657F63A004FCEF3 /* BinaryTree2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinaryTree2; sourceTree = BUILT_PRODUCTS_DIR; };
 		288D56002657F63A004FCEF3 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		288D56072657F6FA004FCEF3 /* Binarytree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Binarytree.h; sourceTree = "<group>"; };
+		288D56082657F6FA004FCEF3 /* Binarytree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Binarytree.c; sourceTree = "<group>"; };
+		288D560A2657FB8B004FCEF3 /* Stack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Stack.c; sourceTree = "<group>"; };
+		288D560B2657FB8B004FCEF3 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		288D560D2657FB96004FCEF3 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Queue.h; sourceTree = "<group>"; };
+		288D560E2657FB96004FCEF3 /* Queue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Queue.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				288D56002657F63A004FCEF3 /* main.c */,
+				288D56072657F6FA004FCEF3 /* Binarytree.h */,
+				288D56082657F6FA004FCEF3 /* Binarytree.c */,
+				288D560A2657FB8B004FCEF3 /* Stack.c */,
+				288D560B2657FB8B004FCEF3 /* Stack.h */,
+				288D560E2657FB96004FCEF3 /* Queue.c */,
+				288D560D2657FB96004FCEF3 /* Queue.h */,
 			);
 			path = BinaryTree2;
 			sourceTree = "<group>";
@@ -118,6 +133,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288D560C2657FB8B004FCEF3 /* Stack.c in Sources */,
+				288D560F2657FB96004FCEF3 /* Queue.c in Sources */,
+				288D56092657F6FA004FCEF3 /* Binarytree.c in Sources */,
 				288D56012657F63A004FCEF3 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
