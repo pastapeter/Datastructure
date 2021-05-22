@@ -106,16 +106,31 @@ Btree* treeCopy(Btree* root){
 }
 
 Btree* treeCopyIterative(Btree* root){
-    Btree* temp;
-    while(root){
-        temp = treeInit();
-        temp->data = root->data;
-        
-        temp->left = root->left;
-        root = root->left;
-        
-        temp->right = root->right;
-    }
+    Btree* temp = NULL;
+    Stack stack;
+    stackInit(&stack);
+    do {
+        while(root != NULL){
+            if(getRightSubtree(root) != NULL){
+                push(&stack, root);
+            }
+            push(&stack, root);
+            root = root->left;
+        }
+        root = pop(&stack);
+        if(root->right != NULL && root->right == peek(&stack)){
+            pop(&stack);
+            push(&stack, root);
+            root = root->right;
+        } else{
+            temp = treeInit();
+            temp->data = root->data;
+            temp->left = root->left;
+            temp->right = root->right;
+            root = NULL;
+        }
+    } while(!isEmpty(&stack));
+    return temp;
 }
 
 int equalTree(Btree* root1, Btree* root2){
@@ -123,4 +138,22 @@ int equalTree(Btree* root1, Btree* root2){
         return TRUE;
     }
     else return FALSE;
+}
+
+int equalTreeIterative(Btree* root1, Btree* root2){
+    if(!(root1 != NULL && root2 != NULL) || (root1->data != root2->data)){return FALSE;}
+    Stack stack1, stack2;
+    stackInit(&stack1);
+    stackInit(&stack2);
+    push(&stack1, root1);
+    push(&stack1, root2);
+    root1 = root1 ->left;
+    root2 = root2 ->left;
+    while(1){
+        push(&stack1, root1);
+        if(peek(&stack1)->data != root2->data){return FALSE;}
+        push(&stack1, root2);
+    }
+   
+    return 1;
 }

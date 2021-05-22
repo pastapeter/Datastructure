@@ -24,5 +24,7 @@ void inorderTraverseIterative(Btree* root);
 void postorderTraverseIterative(Btree* root);
 Btree* treeCopy(Btree* root);
 Btree* treeCopyIterative(Btree* root);
+int equalTreeIterative(Btree* root1, Btree* root2);
+int equalTree(Btree* root1, Btree* root2);
 
 #endif /* Binarytree_h */
