@@ -9,7 +9,9 @@
 #define Binarytree_h
 
 
+
 #include "Stack.h"
+#include "Queue.h"
 
 Btree* treeInit(void);
 Data getData(Btree* node);
@@ -26,5 +28,8 @@ Btree* treeCopy(Btree* root);
 Btree* treeCopyIterative(Btree* root);
 int equalTreeIterative(Btree* root1, Btree* root2);
 int equalTree(Btree* root1, Btree* root2);
+int getHeight(Btree* root);
+int getHeightIterative(Btree* root);
+int getNodeCount(int level, Btree* root);
 
 #endif /* Binarytree_h */

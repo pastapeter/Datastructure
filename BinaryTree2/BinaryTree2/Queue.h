@@ -8,7 +8,7 @@
 #ifndef Queue_h
 #define Queue_h
 
-#define MAX_NUM 15 //20개 이상 입력큐에 들어온다면 오류
+#define MAX_NUM 30 //20개 이상 입력큐에 들어온다면 오류
 #define TRUE 1
 #define FALSE 0
 

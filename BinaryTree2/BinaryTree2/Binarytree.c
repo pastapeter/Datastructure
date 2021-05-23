@@ -6,6 +6,7 @@
 //
 
 #include "Binarytree.h"
+#define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
 Btree* treeInit(void){
     Btree* node = (Btree*)malloc(sizeof(Btree));
@@ -59,10 +60,6 @@ void inorderTraverseIterative(Btree* root){
         for(;root; root = root->left){
             push(&stack, root);
         }
-//        while(root != NULL){
-//            push(&stack, root);
-//            root = root->left;
-//        }
         root = pop(&stack);
         if(!root) break;
         printf("%d ", root->data);
@@ -141,19 +138,120 @@ int equalTree(Btree* root1, Btree* root2){
 }
 
 int equalTreeIterative(Btree* root1, Btree* root2){
-    if(!(root1 != NULL && root2 != NULL) || (root1->data != root2->data)){return FALSE;}
-    Stack stack1, stack2;
+    if(!(root1 != NULL && root2 != NULL)){return FALSE;}
+    Stack stack1;
     stackInit(&stack1);
-    stackInit(&stack2);
-    push(&stack1, root1);
     push(&stack1, root2);
-    root1 = root1 ->left;
-    root2 = root2 ->left;
-    while(1){
-        push(&stack1, root1);
-        if(peek(&stack1)->data != root2->data){return FALSE;}
-        push(&stack1, root2);
+    push(&stack1, root1);
+    while(!isEmpty(&stack1)){
+        root1 = pop(&stack1);
+        root2 = pop(&stack1);
+        if(root1->data != root2->data){return FALSE;}
+        if((root1->right != NULL && root2->right != NULL)){
+            push(&stack1, root2->right);
+            push(&stack1, root1->right);
+        }
+        if(root1->left != NULL && root2->left != NULL){
+            push(&stack1, root2->left);
+            push(&stack1, root1->left);
+        }
     }
-   
-    return 1;
+    return TRUE;
+}
+
+int getHeight(Btree* root){
+    int height = 0;
+    if(root != NULL){
+        height = 1 + MAX(getHeight(root->left), getHeight(root->right));
+    }
+    return height;
+}
+
+int getHeightIterative(Btree* root){
+    Stack stack;
+    stackInit(&stack);
+    int height = 0;
+    int flag = 1;
+    int maxHeight = 0;
+    int i = 0;
+    Btree* temp = root;
+    int array[20] = {0};
+    do {
+        while(root != NULL){
+            if(root->right != NULL){
+                push(&stack, root->right);
+            }
+            push(&stack, root);
+            root = root->left;
+            height++;
+        }
+        root = pop(&stack);
+        height--;
+        if(root->right != NULL && root->right == peek(&stack)){
+            pop(&stack);
+            push(&stack, root);
+            if(peek(&stack)->data == temp->data){
+                height = 0;
+            }
+            root = root->right;
+            height++;
+            flag = 0;
+        } else {
+            array[i++] = height;
+            root = NULL;
+        }
+    } while (!isEmpty(&stack));
+    
+    for(int j=0;j<i;j++){
+        if(maxHeight < array[j]){
+            maxHeight = array[j];
+        }
+    }
+    return maxHeight+1;
+}
+
+int getNodeCount(int level, Btree* root){
+    int count = 1;
+    int next = 0;
+    int limit = getHeight(root);
+    if(level > limit){
+        printf("ERROR");
+        exit(-1);
+    }
+    Btree* visited[20] = {NULL};
+    int levelList[20] = {0};
+    int index = 0;
+    
+    queue queue;
+    QueueInit(&queue);
+    enqueue(&queue, root);
+    levelList[count]++;
+    while(!QisEmpty(&queue)){
+        int key = 1;
+        Btree* node = dequeue(&queue);
+        // visitedList에 추가
+        visited[index++] = node;
+        if(node->left != NULL){
+            count++;
+            levelList[count]++;
+            count--;
+            enqueue(&queue, node->left);
+        }
+        next++;
+        if(node->right != NULL){
+            count++;
+            levelList[count]++;
+            count--;
+            enqueue(&queue, node->right);
+        }
+        next++;
+        for(int i=0;i<count;i++){
+            key *= 2;
+        }
+        if(key <= next){
+            next = 0;
+            count++;
+        }
+    }
+    return levelList[level];
 }
