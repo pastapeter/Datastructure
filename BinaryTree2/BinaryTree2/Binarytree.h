@@ -23,7 +23,7 @@ void MakeRightSubtree(Btree* main, Btree* node);
 void inorderTraverseRecursive(Btree* root);
 void postorderTraverseRecursive(Btree* root);
 void inorderTraverseIterative(Btree* root);
-void postorderTraverseIterative(Btree* root);
+void posMakeLeftSubtreeterative(Btree* root);
 Btree* treeCopy(Btree* root);
 Btree* treeCopyIterative(Btree* root);
 int equalTreeIterative(Btree* root1, Btree* root2);

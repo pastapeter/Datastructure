@@ -190,7 +190,7 @@ int getHeightIterative(Btree* root){
         if(root->right != NULL && root->right == peek(&stack)){
             pop(&stack);
             push(&stack, root);
-            if(peek(&stack)->data == temp->data){
+            if(peek(&stack) == temp){
                 height = 0;
             }
             root = root->right;
@@ -253,5 +253,9 @@ int getNodeCount(int level, Btree* root){
             count++;
         }
     }
+    for(int i=0;i<20;i++){
+        printf("%d ", levelList[i]);
+    }
     return levelList[level];
 }
+
