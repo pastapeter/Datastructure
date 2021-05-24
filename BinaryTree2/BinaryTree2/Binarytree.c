@@ -171,7 +171,6 @@ int getHeightIterative(Btree* root){
     Stack stack;
     stackInit(&stack);
     int height = 0;
-    int flag = 1;
     int maxHeight = 0;
     int i = 0;
     Btree* temp = root;
@@ -195,7 +194,6 @@ int getHeightIterative(Btree* root){
             }
             root = root->right;
             height++;
-            flag = 0;
         } else {
             array[i++] = height;
             root = NULL;
@@ -203,6 +201,7 @@ int getHeightIterative(Btree* root){
     } while (!isEmpty(&stack));
     
     for(int j=0;j<i;j++){
+        printf("%d ", array[j]);
         if(maxHeight < array[j]){
             maxHeight = array[j];
         }
@@ -218,19 +217,17 @@ int getNodeCount(int level, Btree* root){
         printf("ERROR");
         exit(-1);
     }
-    Btree* visited[20] = {NULL};
     int levelList[20] = {0};
-    int index = 0;
     
     queue queue;
     QueueInit(&queue);
     enqueue(&queue, root);
     levelList[count]++;
+    
     while(!QisEmpty(&queue)){
         int key = 1;
         Btree* node = dequeue(&queue);
         // visitedList에 추가
-        visited[index++] = node;
         if(node->left != NULL){
             count++;
             levelList[count]++;
