@@ -51,6 +51,7 @@ void insert(Btree** root, int key){
     cur = *root;
     parent = NULL;
     
+    // 찾고 싶은 부모노드 찾기
     while(cur != NULL){
         if(key == cur->data){
             return;
@@ -63,6 +64,7 @@ void insert(Btree** root, int key){
         }
     }
     
+    //노드 생성 & 초기화
     newNode = (Btree*)malloc(sizeof(Btree));
     if(newNode == NULL) return;
     newNode->data = key;
@@ -77,6 +79,7 @@ void insert(Btree** root, int key){
             makeRightSubtree(parent, newNode);
         }
     }
+    // 부모가 없다 => 자기가 부모
     else *root = newNode;
 }
 
@@ -91,7 +94,7 @@ void insertRecursive(Btree** root, int key){
     else{
         if((*root)->data >= key){
             if((*root)->left != NULL){
-                insert(&((*root)->left), key);
+                insertRecursive(&((*root)->left), key);
             }
             else {
                 Btree* newNode = (Btree*)malloc(sizeof(Btree));
@@ -102,7 +105,7 @@ void insertRecursive(Btree** root, int key){
             }
         } else {
             if((*root)->right != NULL){
-                insert(&((*root)->right), key);
+                insertRecursive(&((*root)->right), key);
             }
             else {
                 Btree* newNode = (Btree*)malloc(sizeof(Btree));

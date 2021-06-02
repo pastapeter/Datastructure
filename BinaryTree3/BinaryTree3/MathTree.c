@@ -106,6 +106,5 @@ int evaluate(Btree* root){
             return op1/op2;
             break;
     }
-    
     return 0;
 }
