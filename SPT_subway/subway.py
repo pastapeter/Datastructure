@@ -1,5 +1,3 @@
-from enum import Enum
-from queue import Empty, PriorityQueue
 
 INF = 9999
 matrix = [[INF for col in range(29)] for row in range(29)]
@@ -57,10 +55,7 @@ def makeMatrix(EdgeList):
        matrix[edge.station1][edge.station1] = 0
        matrix[edge.station1][edge.station2] = edge.distance
        matrix[edge.station2][edge.station1] = edge.distance
-   
-# def makeList(EdgeList):
-#     for edge in EdgeList:
-#         if adjclist[edge.station1] == None:
+
             
 class Findway:
     
@@ -115,11 +110,9 @@ class Findway:
         
 
         self.visited[station[self.depart]] = True
-        print("station : ", station[self.depart])
         for i in range(len(distance)-1):
             current = getsmallIndex(self)
             self.visited[current] = True
-            print("station :", current)
             if(i == 0):
                 for k in range(len(matrix[station[self.depart]])):
                     if(matrix[station[self.depart]][k] != INF and matrix[station[self.depart]][k] != 0):
@@ -127,7 +120,7 @@ class Findway:
             for j in range(len(station)):
                 if self.visited[j] is not True:
                     if(distance[current] + matrix[current][j] < distance[j]):
-                        distance[j] = distance[current] + matrix[current][j]
+                        distance[j] = distance[current] + matrix[current][j] #dp-> 기존의 값을 더작은 값으로 갱신한다.
                         self.direction.append((j, current))
                     
 
@@ -144,11 +137,12 @@ def find_key(dict, val):
 
 print("지하철노선로 시작")
 makeMatrix(EdgeList)
-print(matrix)
 startSubway = Findway()
 startSubway.station_list()
 startSubway.start()
 SPT = startSubway.SPT_linear()
+print("경로와 거리를 표시한다.")
+paths.reverse()
 for path in paths:
     stop = find_key(station, path)
     print(stop, end=" ")
