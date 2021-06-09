@@ -7,8 +7,10 @@
 // 위상정렬
 #define NUM 10
 #include "queue.h"
+#include "Stack.h"
 
 enum Subject {미적분학, 프로그래밍1, 프로그래밍2, 자료구조, 알고리즘, 소프트웨어공학, 운영체제, 웹프로그래밍, 머신러닝, 캡스톤};
+
 char* subjectName[10] = {"미적분학", "프로그래밍1", "프로그래밍2", "자료구조", "알고리즘", "소프트웨어공학", "운영체제", "웹프로그래밍", "머신러닝", "캡스톤"};
 
 int inDegree[NUM] = {0};
@@ -16,23 +18,56 @@ int result[NUM] = {0};
 
 typedef struct Graph{
     int v;
-    List* adjcList;
     List* fromList;
 }graph;
 
 void graphInit(graph* pg, int v){
     pg->v = v;
-    pg->adjcList = (List*)malloc(sizeof(List)*v);
     pg->fromList = (List*)malloc(sizeof(List)*v);
     for(int i=0;i<v;i++){
-        listInit(&(pg->adjcList[i]));
         listInit(&(pg->fromList[i]));
     }
 }
 
 void addEdge(graph* pg, int from, int to){
-    Insert(&(pg->adjcList[to]), from);
     Insert(&(pg->fromList[from]), to);
+}
+
+int topologySortStack(graph* pg){
+    int index=0;
+    //indegree 배열 초기화
+    Node* w;
+    ArrayStack stack;
+
+    for(int i=0;i<NUM;i++){
+        for(w=pg->fromList[i].head->next;w;w=w->next){
+            //지금 vertex에서 나온 edge가 진입하는 vertex index에 ++해준다.
+            inDegree[w->data]++;
+        }
+    }
+    for(int i=0;i<NUM;i++){
+        printf("%d ", inDegree[i]);
+    }
+    ArrayStackInit(&stack);
+    // 진입차수가 0인게 들어가야하느데,,
+    for(int i=0;i<NUM;i++){
+        if(inDegree[i] == 0) SPush(&stack, i);
+    }
+    while (!SIsEmpty(&stack)) {
+        int popelement = SPop(&stack);
+        result[index++] = popelement;
+        // 각 정점의 진입차수 변경
+        for(w = pg->fromList[popelement].head;w;w=w->next){ //여기가 그래프의 키포인트 인접한 곳을 방문하라
+            if(--inDegree[w->data] == 0){ //들어오는 edge를 삭제했을때 진입차수가 0이된다면
+                SPush(&stack, w->data);
+            }
+        }
+    }
+    for(int i=0;i<NUM;i++){
+        printf("%s -> ", subjectName[result[i]]);
+    }
+    if(index != 10) return TRUE;
+    else return FALSE;
 }
 
 void topologySort(graph* pg){
@@ -40,8 +75,8 @@ void topologySort(graph* pg){
     //indegree 배열 초기화
     Node* w;
     for(int i=0;i<NUM;i++){
-        for(w=pg->adjcList[i].head->next;w;w=w->next){
-            inDegree[i]++;
+        for(w=pg->fromList[i].head->next;w;w=w->next){
+            inDegree[w->data]++;
         }
     }
     for(int i=0;i<NUM;i++){
@@ -81,9 +116,9 @@ void showGrpah(graph* pg){
     int data;
     for(int i=0;i<pg->v;i++){
         printf("%d와 연결된 정점: ", i);
-        if(LFirst(&(pg->adjcList[i]), &data)){
+        if(LFirst(&(pg->fromList[i]), &data)){
             printf("%d ", data);
-            while(LNext(&(pg->adjcList[i]), &data)){
+            while(LNext(&(pg->fromList[i]), &data)){
                 printf("%d ", data);
             }
         }
@@ -94,7 +129,7 @@ void showGrpah(graph* pg){
 int main(int argc, const char * argv[]) {
     graph graph;
     graphInit(&graph, NUM);
-    
+
     addEdge(&graph, 미적분학, 프로그래밍1);
     addEdge(&graph, 미적분학, 웹프로그래밍);
     addEdge(&graph, 웹프로그래밍, 프로그래밍2);
@@ -108,5 +143,6 @@ int main(int argc, const char * argv[]) {
     addEdge(&graph, 소프트웨어공학, 캡스톤);
     addEdge(&graph, 알고리즘, 캡스톤);
     showGrpah(&graph);
-    topologySort(&graph);
+//    topologySort(&graph);
+    printf("사이클 존재여부 %d\n", topologySortStack(&graph));
 }

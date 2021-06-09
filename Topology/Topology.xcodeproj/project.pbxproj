@@ -10,6 +10,7 @@
 		288F059F266DF319009CAA72 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 288F059E266DF319009CAA72 /* main.c */; };
 		288F05A7266DF347009CAA72 /* queue.c in Sources */ = {isa = PBXBuildFile; fileRef = 288F05A6266DF347009CAA72 /* queue.c */; };
 		288F05AD266E03A1009CAA72 /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 288F05AC266E03A1009CAA72 /* LinkedList.c */; };
+		28D03BAD2671035700926493 /* Stack.c in Sources */ = {isa = PBXBuildFile; fileRef = 28D03BAC2671035700926493 /* Stack.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		288F05A6266DF347009CAA72 /* queue.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = queue.c; sourceTree = "<group>"; };
 		288F05AB266E03A1009CAA72 /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinkedList.h; path = ../../Graph/graph/graph/LinkedList.h; sourceTree = "<group>"; };
 		288F05AC266E03A1009CAA72 /* LinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = LinkedList.c; path = ../../Graph/graph/graph/LinkedList.c; sourceTree = "<group>"; };
+		28D03BAB2671035700926493 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = "../../DFS, BFS/DFS, BFS/Stack.h"; sourceTree = "<group>"; };
+		28D03BAC2671035700926493 /* Stack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Stack.c; path = "../../DFS, BFS/DFS, BFS/Stack.c"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				288F05A5266DF347009CAA72 /* queue.h */,
 				288F05AC266E03A1009CAA72 /* LinkedList.c */,
 				288F05AB266E03A1009CAA72 /* LinkedList.h */,
+				28D03BAC2671035700926493 /* Stack.c */,
+				28D03BAB2671035700926493 /* Stack.h */,
 				288F05A6266DF347009CAA72 /* queue.c */,
 			);
 			path = Topology;
@@ -130,6 +135,7 @@
 			files = (
 				288F059F266DF319009CAA72 /* main.c in Sources */,
 				288F05AD266E03A1009CAA72 /* LinkedList.c in Sources */,
+				28D03BAD2671035700926493 /* Stack.c in Sources */,
 				288F05A7266DF347009CAA72 /* queue.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
